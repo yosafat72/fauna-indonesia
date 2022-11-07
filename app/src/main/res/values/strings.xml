@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Fauna Indonesia</string>
+    <string name="start">Start</string>
+    <string name="study">Let\'s learn</string>
+    <string name="play">Let\'s play</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="exit">Exit</string>
 </resources>
