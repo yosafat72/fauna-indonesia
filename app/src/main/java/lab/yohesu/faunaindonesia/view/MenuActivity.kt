@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import lab.yohesu.faunaindonesia.databinding.ActivityMenuBinding
+import lab.yohesu.faunaindonesia.utils.AlertHelper
 
 class MenuActivity : AppCompatActivity() {
 
@@ -16,6 +17,11 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnExit.setOnClickListener {
+            AlertHelper().AlertClose(this)
+        }
+
     }
 
     override fun onBackPressed() {

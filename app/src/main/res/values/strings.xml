@@ -5,4 +5,42 @@
     <string name="play">Let\'s play</string>
     <string name="leaderboard">Leaderboard</string>
     <string name="exit">Exit</string>
+
+
+    <!--Name fauna-->
+    <string name="ceumpala_kuneng">Ceumpala Kuneng</string>
+    <string name="beo_nias">Beo Nias</string>
+    <string name="kuau_raja">Kuau Raja</string>
+    <string name="serindit">Serindit</string>
+    <string name="ikan_kakap">Ikan Kakap</string>
+    <string name="harimau_sumatra">Harimau Sumatra</string>
+    <string name="ikan_belida">Ikan Belida</string>
+    <string name="mantilin">Mantilin</string>
+    <string name="beruang_madu">Beruang Madu</string>
+    <string name="gajah_sumatra">Gajah Sumatra</string>
+    <string name="badak_jawa">Badak Jawa</string>
+    <string name="elang_bondol">Elang Bondol</string>
+    <string name="macan_tutul_jawa">Macan Tutul Jawa</string>
+    <string name="kepondang_emas">Kepondang Emas</string>
+    <string name="perkutut">Perkutut</string>
+    <string name="ayam_berkisar">Ayam Berkisar</string>
+    <string name="jalak_bali">Jalak Bali</string>
+    <string name="rusa_timor">Rusa Timor</string>
+    <string name="biawak_komodo">Biawak Komodo</string>
+    <string name="enggang_gading">Enggan Gading</string>
+    <string name="kuau_kerdil_kalimantan">Kuau Kerdil Kalimantan</string>
+    <string name="bekantan">Bekantan</string>
+    <string name="pesut_mahakam">Pesut Mahakam</string>
+    <string name="rengkong_badak">Rengkong Badak</string>
+    <string name="julang_sulawesi">Julang Sulawesi</string>
+    <string name="mandar_dengkur">Mandar Dengkur</string>
+    <string name="anoa">Anoa</string>
+    <string name="maleo_senkawor">Maleo Senkawor</string>
+    <string name="ikan_bulalao">Ikan Bulalao</string>
+    <string name="tangkasi">Tangkasi</string>
+    <string name="bidadari_halmahera">Bidadari Halmahera</string>
+    <string name="nuri_raja_ambon">Nuri Raja Ambon</string>
+    <string name="cendrawasi_merah">Cendrawasi Merah</string>
+    <string name="cendrawasi_kawat">Cendrawasi 12 Kawat</string>
+    <string name="cancel">Cancel</string>
 </resources>

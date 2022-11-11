@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dp25">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="@dimen/dp150"
+                android:layout_height="@dimen/dp150"
+                app:lottie_rawRes="@raw/penguin"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_gravity="center_horizontal"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exit"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/dp15"
+                android:fontFamily="@font/dilo_world"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/dilo_world"
+                android:layout_marginTop="10dp"
+                android:text="Are you sure, you want to exit"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/btnDismiss"
+                    android:layout_width="@dimen/dp100"
+                    android:layout_height="40dp"
+                    android:textColor="@color/white"
+                    android:text="@string/cancel"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounded_button"
+                    android:layout_marginEnd="@dimen/dp15"
+                    android:layout_marginTop="@dimen/dp25"/>
+
+                <Button
+                    android:id="@+id/btnExit"
+                    android:layout_width="@dimen/dp100"
+                    android:layout_height="40dp"
+                    android:textColor="@color/white"
+                    android:text="@string/exit"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounded_button"
+                    android:layout_marginTop="@dimen/dp25"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
