@@ -8,6 +8,7 @@ import android.webkit.WebViewClient
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import lab.yohesu.faunaindonesia.databinding.ActivityLearningBinding
@@ -25,7 +26,7 @@ class LearningActivity : AppCompatActivity() {
     }
 
     private var arrPosition = 0
-    private var tempArrAnimal = listOf<LearningDataModel>()
+    private var tempArrAnimal: List<LearningDataModel?>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,18 +35,18 @@ class LearningActivity : AppCompatActivity() {
 
         observeViewModel()
 
-        viewModel.fetchLearning()
+        viewModel.fetchLearning(ctx = this)
 
         binding.btnPrev.setOnClickListener {
             if(arrPosition > 0){
                 arrPosition--
-                setLearning(tempArrAnimal[arrPosition])
+                tempArrAnimal?.get(arrPosition)?.let { it1 -> setLearning(it1) }
             }
         }
         binding.btnNext.setOnClickListener {
-            if (arrPosition < tempArrAnimal.size - 1){
+            if (arrPosition < (tempArrAnimal?.size ?: 0) - 1){
                 arrPosition++
-                setLearning(tempArrAnimal[arrPosition])
+                tempArrAnimal?.get(arrPosition)?.let { it1 -> setLearning(it1) }
             }
         }
 
@@ -69,10 +70,11 @@ class LearningActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun onSuccess(data: LearningModel?) {
-        if (data != null) {
-            tempArrAnimal = data.learningData!!
-            setLearning(data.learningData.first())
+    private fun onSuccess(model: LearningModel?) {
+        Log.d("RESULT", model.toString())
+        if (model != null) {
+            tempArrAnimal = model.data!!
+            model.data.first()?.let { setLearning(it) }
         }
     }
 
@@ -80,10 +82,10 @@ class LearningActivity : AppCompatActivity() {
 
     }
 
-    private fun setLearning(data: LearningDataModel){
-        data.animalImage.let { it?.let { it1 -> binding.imgAnimal.setImageResource(it1) } }
-        data.animalName.let { it?.let { it1 -> binding.txtAnimal.setText(it1) } }
-        data.animalSite.let { it?.let { it1 -> loadLearningWeb(it1) } }
+    private fun setLearning(model: LearningDataModel){
+        model.image.let { it?.let { it1 -> Glide.with(this).load(it1).fitCenter().into(binding.imgAnimal) } }
+        model.name.let { it?.let { it1 -> binding.txtAnimal.text = it1 } }
+        model.site.let { it?.let { it1 -> loadLearningWeb(it1) } }
     }
 
     @SuppressLint("SetJavaScriptEnabled")

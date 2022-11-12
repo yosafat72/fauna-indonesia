@@ -1,5 +1,6 @@
 package lab.yohesu.faunaindonesia.viewmodel
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,10 +24,10 @@ class LearningViewModel : ViewModel() {
         )
     )
 
-    fun fetchLearning(){
+    fun fetchLearning(ctx: Context){
         state.value = State.loading()
         viewModelScope.launch {
-            repository.getlearning()
+            repository.getlearning(ctx = ctx)
                 .catch {
                     state.value = it.localizedMessage?.let { it1 -> State.error(it1) }!!
                 }

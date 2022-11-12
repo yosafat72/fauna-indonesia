@@ -33,7 +33,7 @@
             android:id="@+id/imgAnimal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:src="@drawable/harimau_sumatra"
+            tools:src="@drawable/logo"
             android:scaleType="fitXY"/>
 
     </androidx.cardview.widget.CardView>

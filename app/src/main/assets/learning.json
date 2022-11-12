@@ -1,0 +1,210 @@
+{
+  "success" : true,
+  "message" : "Success",
+  "data" : [
+    {
+      "name" : "Cempala Kuneng",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/1/1a/Copsychus_pyrropygus_1993_Indonesia_stamp.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Murai_ekor_kuning"
+    },
+    {
+      "name" : "Beo Nias",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Gracula_robusta_-_Annali_del_Museo_civico_di_storia_naturale_di_Genova_%281886%29_%2817788287234%29_%28cropped%29.jpg/500px-Gracula_robusta_-_Annali_del_Museo_civico_di_storia_naturale_di_Genova_%281886%29_%2817788287234%29_%28cropped%29.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Beo_nias"
+    },
+    {
+      "name" : "Kuau Raja",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/7/70/BxZ_Argusianus_argus_00x.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Kuau_raja"
+    },
+    {
+      "name" : "Serindit",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/5/57/Stavenn_Loriculus_galgulus_00.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Serindit_riau"
+    },
+    {
+      "name" : "Ikan Kakap",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Lutjanus_campechanus_SI.jpg/500px-Lutjanus_campechanus_SI.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Kakap"
+    },
+    {
+      "name" : "Harimau Sumatra",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Sumatran_Tiger_Berlin_Tierpark.jpg/500px-Sumatran_Tiger_Berlin_Tierpark.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Harimau_sumatra"
+    },
+    {
+      "name" : "Ikan Belida",
+      "image" : "https://upload.wikimedia.org/wikipedia/id/thumb/6/68/110305_lopis_150.PNG/440px-110305_lopis_150.PNG",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Lopis"
+    },
+    {
+      "name" : "Mantilin",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Kera_hantu_Sarawak.jpg/440px-Kera_hantu_Sarawak.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Tarsius_bangka"
+    },
+    {
+      "name" : "Beruang Madu",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Sun_Bear_7.jpg/480px-Sun_Bear_7.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Beruang_madu"
+    },
+    {
+      "name" : "Gajah Sumatra",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Borobudur-Temple-Park_Elephant-cage-01.jpg/440px-Borobudur-Temple-Park_Elephant-cage-01.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Gajah_sumatra"
+    },
+    {
+      "name" : "Badak Jawa",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Rhinoceros_sondaicus_in_London_Zoo.jpg/500px-Rhinoceros_sondaicus_in_London_Zoo.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Badak_jawa"
+    },
+    {
+      "name" : "Elang Bondol",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Haliastur_indus_intermedius_%282%29.JPG/440px-Haliastur_indus_intermedius_%282%29.JPG",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Elang_bondol"
+    },
+    {
+      "name" : "Macan Tutul Jawa",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Levhart_j%C3%A1vsk%C3%BD_v_Zoo_Praha_002.jpg/450px-Levhart_j%C3%A1vsk%C3%BD_v_Zoo_Praha_002.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Macan_tutul_jawa"
+    },
+    {
+      "name" : "Kepodang Emas",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Black-naped_Oriole.jpg/450px-Black-naped_Oriole.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Kepodang_kuduk-hitam"
+    },
+    {
+      "name" : "Perkutut",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Zebra_Dove_-_Geopelia_striata_%28Perkutut%29.JPG/440px-Zebra_Dove_-_Geopelia_striata_%28Perkutut%29.JPG",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Perkutut_jawa"
+    },
+    {
+      "name" : "Ayam bekisar",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/GallusTemminckiiWolf.jpg/480px-GallusTemminckiiWolf.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Ayam_bekisar"
+    },
+    {
+      "name" : "Jalak Bali",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Bali_Myna_in_Bali_Barat_National_Park.jpg/460px-Bali_Myna_in_Bali_Barat_National_Park.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Jalak_bali"
+    },
+    {
+      "name" : "Rusa Timor",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Kawanan_Rusa.jpg/440px-Kawanan_Rusa.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Rusa_timor"
+    },
+    {
+      "name" : "Biawak Komodo",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Komodo_dragon_Varanus_komodoensis_Ragunan_Zoo_2.JPG/500px-Komodo_dragon_Varanus_komodoensis_Ragunan_Zoo_2.JPG",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Komodo"
+    },
+    {
+      "name" : "Enggang Gading",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/0/0e/Buceros-vigil-bvk.JPG",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Rangkong_gading"
+    },
+    {
+      "name" : "Kuau Kerdil Kalimantan",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Bornean_Peacock_Pheasant_by_George_Edward_Lodge.png/440px-Bornean_Peacock_Pheasant_by_George_Edward_Lodge.png",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Kuau-kerdil_kalimantan"
+    },
+    {
+      "name" : "Bekantan",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Proboscis.jpg/450px-Proboscis.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Bekantan"
+    },
+    {
+      "name" : "Pesut Mahakam",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Irrawaddy_dolphin-Orcaella_brevirostris_by_2eight.jpg/440px-Irrawaddy_dolphin-Orcaella_brevirostris_by_2eight.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Pesut_mahakam"
+    },
+    {
+      "name" : "Rangkong Badak",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Buceros_rhinoceros_-Singapore_Zoo_-pair-8a.jpg/440px-Buceros_rhinoceros_-Singapore_Zoo_-pair-8a.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Rangkong_badak"
+    },
+    {
+      "name" : "Julang Sulawesi",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Aceros_cassidix_-North_Sulawesi-4.jpg/520px-Aceros_cassidix_-North_Sulawesi-4.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Julang_sulawesi"
+    },
+    {
+      "name" : "Mandar Dengkur",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Aramidopsis_plateni_1898.jpg/440px-Aramidopsis_plateni_1898.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Mandar_dengkur"
+    },
+    {
+      "name" : "Anoa",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Anoa_Bubalus_depressicornis_Surabaya_Zoo.jpg/440px-Anoa_Bubalus_depressicornis_Surabaya_Zoo.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Anoa"
+    },
+    {
+      "name" : "Maleo Senkawor",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/7/7b/Stavenn_Maleo.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Maleo_senkawor"
+    },
+    {
+      "name" : "Ikan Bulalao",
+      "image" : "https://upload.wikimedia.org/wikipedia/id/5/53/Ikan_bulalao1.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Ikan_bulalao"
+    },
+    {
+      "name" : "Tangkasi",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Tarsius_tarsier_Tandurusa_zoo.JPG/500px-Tarsius_tarsier_Tandurusa_zoo.JPG",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Tarsius_tarsier"
+    },
+    {
+      "name" : "Bidadari Halmahera",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/3/33/Semioptera_wallacei_by_Bowdler_Sharpe.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Bidadari_halmahera"
+    },
+    {
+      "name" : "Nuri raja Ambon",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Alisterus_amboinensis_-Brevard_Zoo-8b-4c.jpg/600px-Alisterus_amboinensis_-Brevard_Zoo-8b-4c.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Nuri-raja_ambon"
+    },
+    {
+      "name" : "Cendrawasih Merah",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/c/cd/CpZ_Paradisaea_rubra_00.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Cenderawasih_merah"
+    },
+    {
+      "name" : "Cendrawasih 12 Kawat",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/3/3c/BxZ_Seleucidis_melanoleuca_00a.jpg",
+      "sound" : "",
+      "site" : "https://id.wikipedia.org/wiki/Cenderawasih_mati-kawat"
+    }
+  ]
+}
