@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.widget.Toast
 import lab.yohesu.faunaindonesia.databinding.ActivityMenuBinding
 import lab.yohesu.faunaindonesia.utils.AlertHelper
+import lab.yohesu.faunaindonesia.utils.MusicHelper
 
 class MenuActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMenuBinding
+    private val musicHelper: MusicHelper by lazy { MusicHelper() }
 
     //timer
     var backPressedTime: Long = 0
@@ -18,6 +20,8 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        musicHelper.playMusic(this)
 
         binding.btnExit.setOnClickListener {
             AlertHelper().AlertClose(this)
@@ -37,5 +41,20 @@ class MenuActivity : AppCompatActivity() {
             Toast.makeText(this, "Press back again to leave the app.", Toast.LENGTH_LONG).show()
         }
         backPressedTime = System.currentTimeMillis()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        musicHelper.resumeMusic()
+    }
+
+    override fun onPause() {
+        musicHelper.pauseMusic()
+        super.onPause()
+    }
+
+    override fun onDestroy() {
+        musicHelper.stopMusic()
+        super.onDestroy()
     }
 }
