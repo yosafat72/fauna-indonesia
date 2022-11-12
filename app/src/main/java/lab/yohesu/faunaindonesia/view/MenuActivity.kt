@@ -1,5 +1,6 @@
 package lab.yohesu.faunaindonesia.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -20,6 +21,10 @@ class MenuActivity : AppCompatActivity() {
 
         binding.btnExit.setOnClickListener {
             AlertHelper().AlertClose(this)
+        }
+
+        binding.btnStudy.setOnClickListener {
+            startActivity(Intent(this, LearningActivity::class.java))
         }
 
     }
