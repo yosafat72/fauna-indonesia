@@ -66,11 +66,12 @@ class LearningActivity : AppCompatActivity() {
 
     private fun onError(message: String?) {
         Log.d("Running-Error", "$message")
+        finish()
     }
 
     private fun onSuccess(data: LearningModel?) {
         if (data != null) {
-            tempArrAnimal = data.learningData
+            tempArrAnimal = data.learningData!!
             setLearning(data.learningData.first())
         }
     }

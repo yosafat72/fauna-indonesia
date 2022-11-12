@@ -58,7 +58,8 @@
                     android:textSize="16sp"
                     android:background="@drawable/rounded_button"
                     android:layout_marginEnd="@dimen/dp15"
-                    android:layout_marginTop="@dimen/dp25"/>
+                    android:layout_marginTop="@dimen/dp25"
+                    android:fontFamily="@font/dilo_world"/>
 
                 <Button
                     android:id="@+id/btnExit"
@@ -69,7 +70,8 @@
                     android:textAllCaps="false"
                     android:textSize="16sp"
                     android:background="@drawable/rounded_button"
-                    android:layout_marginTop="@dimen/dp25"/>
+                    android:layout_marginTop="@dimen/dp25"
+                    android:fontFamily="@font/dilo_world"/>
 
             </LinearLayout>
 

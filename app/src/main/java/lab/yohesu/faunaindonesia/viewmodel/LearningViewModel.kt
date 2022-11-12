@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import lab.yohesu.faunaindonesia.model.LearningDataModel
 import lab.yohesu.faunaindonesia.model.LearningModel
 import lab.yohesu.faunaindonesia.repository.LearningRepository
 import lab.yohesu.faunaindonesia.service.State
@@ -19,7 +18,7 @@ class LearningViewModel : ViewModel() {
     val state = MutableStateFlow(
         State(
             Status.IDLE,
-            LearningModel(learningData = listOf(LearningDataModel())),
+            LearningModel(),
             ""
         )
     )
