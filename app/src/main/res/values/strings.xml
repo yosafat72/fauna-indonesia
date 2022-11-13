@@ -49,5 +49,7 @@
     <string name="level_03">Level 03</string>
     <string name="next">Next</string>
     <string name="score_0">Score : 0</string>
+    <string name="game_over">Game Over</string>
+    <string name="back_to_menu">Back to menu</string>
 
 </resources>

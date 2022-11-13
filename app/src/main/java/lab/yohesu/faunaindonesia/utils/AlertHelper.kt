@@ -1,5 +1,6 @@
 package lab.yohesu.faunaindonesia.utils
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Dialog
 import android.content.Context
@@ -10,8 +11,10 @@ import android.view.LayoutInflater
 import android.view.Window
 import android.view.WindowManager
 import lab.yohesu.faunaindonesia.databinding.DialogExitBinding
+import lab.yohesu.faunaindonesia.databinding.DialogGameOverBinding
 import lab.yohesu.faunaindonesia.databinding.DialogLeaderboardLevelBinding
 import lab.yohesu.faunaindonesia.databinding.DialogPlayingLevelBinding
+import lab.yohesu.faunaindonesia.view.MenuActivity
 import lab.yohesu.faunaindonesia.view.PlayingActivity
 import kotlin.system.exitProcess
 
@@ -112,6 +115,35 @@ class AlertHelper {
 
         dialogBinding.btnDismiss.setOnClickListener {
             dialog.dismiss()
+        }
+
+        dialog.show()
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun AlertGameOver(activity: Activity, score: Int){
+        val dialog = Dialog(activity)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+
+        val dialogBinding = DialogGameOverBinding.inflate(LayoutInflater.from(activity))
+
+        dialog.setContentView(dialogBinding.root)
+
+        val layoutParams = WindowManager.LayoutParams()
+        layoutParams.copyFrom(dialog.window!!.attributes)
+        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT
+        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT
+
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window?.attributes = layoutParams
+
+        dialogBinding.txtScore.text = "Your score is $score"
+
+        dialogBinding.btnBackToMenu.setOnClickListener {
+            val intent = Intent(activity, MenuActivity::class.java)
+            activity.startActivity(intent)
+            activity.finishAffinity()
         }
 
         dialog.show()

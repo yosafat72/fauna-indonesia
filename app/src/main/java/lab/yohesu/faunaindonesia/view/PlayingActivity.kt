@@ -14,6 +14,7 @@ import lab.yohesu.faunaindonesia.databinding.ActivityPlayingBinding
 import lab.yohesu.faunaindonesia.model.PlayingDataModel
 import lab.yohesu.faunaindonesia.model.PlayingModel
 import lab.yohesu.faunaindonesia.service.Status
+import lab.yohesu.faunaindonesia.utils.AlertHelper
 import lab.yohesu.faunaindonesia.viewmodel.PlayingViewModel
 
 class PlayingActivity : AppCompatActivity() {
@@ -21,6 +22,9 @@ class PlayingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPlayingBinding
     private val viewModel : PlayingViewModel by lazy {
         ViewModelProvider(this)[PlayingViewModel::class.java]
+    }
+    private val alertHelper: AlertHelper by lazy {
+        AlertHelper()
     }
 
     private var tempOption: String? = ""
@@ -44,6 +48,7 @@ class PlayingActivity : AppCompatActivity() {
                 tempArrQuestion?.get(arrPosition)?.let { it1 -> setToView(it1) }
             }else{
                 tempArrQuestion?.get(arrPosition)?.let { calculateScore(it) }
+                alertHelper.AlertGameOver(this, tempScope)
             }
             clearRadio()
         }
