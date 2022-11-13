@@ -8,11 +8,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import lab.yohesu.faunaindonesia.R
-import lab.yohesu.faunaindonesia.model.LearningDataModel
 import lab.yohesu.faunaindonesia.service.JsonReader
 import lab.yohesu.faunaindonesia.utils.JsonConstanta
-import lab.yohesu.faunaindonesia.utils.WebsiteConstanta
 
 class LearningRepository {
 

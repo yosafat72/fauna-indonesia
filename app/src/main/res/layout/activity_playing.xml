@@ -45,9 +45,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dp20"
             app:cardElevation="@dimen/dp25"
-            app:cardCornerRadius="@dimen/dp25">
+            app:cardCornerRadius="@dimen/dp25"
+            android:layout_margin="@dimen/dp25">
 
         <LinearLayout android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
@@ -78,20 +78,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_marginStart="@dimen/dp20"
-                        android:layout_marginEnd="@dimen/dp20">
+                        android:layout_marginStart="@dimen/dp05"
+                        android:layout_marginEnd="@dimen/dp05">
 
                     <com.jbvincey.nestedradiobutton.NestedRadioButton android:id="@+id/radioOptionA"
                                                                       android:layout_width="@dimen/dp175"
                                                                       android:layout_height="wrap_content"
                                                                       tools:text="Gajah"
-                                                                      android:buttonTint="@color/philippine_gold"/>
+                                                                      android:buttonTint="@color/philippine_gold"
+                                                                      android:ellipsize="end"/>
 
                     <com.jbvincey.nestedradiobutton.NestedRadioButton android:id="@+id/radioOptionB"
                                                                       android:layout_width="@dimen/dp175"
                                                                       android:layout_height="wrap_content"
                                                                       tools:text="Gajah"
-                                                                      android:buttonTint="@color/philippine_gold"/>
+                                                                      android:buttonTint="@color/philippine_gold"
+                                                                      android:ellipsize="end"/>
 
                 </LinearLayout>
 
@@ -99,21 +101,23 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_marginStart="@dimen/dp20"
-                        android:layout_marginEnd="@dimen/dp20"
-                        android:layout_marginBottom="@dimen/dp10">
+                        android:layout_marginStart="@dimen/dp05"
+                        android:layout_marginEnd="@dimen/dp05"
+                        android:layout_marginBottom="@dimen/dp20">
 
                     <com.jbvincey.nestedradiobutton.NestedRadioButton android:id="@+id/radioOptionC"
                                                                       android:layout_width="@dimen/dp175"
                                                                       android:layout_height="wrap_content"
                                                                       tools:text="Gajah"
-                                                                      android:buttonTint="@color/philippine_gold"/>
+                                                                      android:buttonTint="@color/philippine_gold"
+                                                                      android:ellipsize="end"/>
 
                     <com.jbvincey.nestedradiobutton.NestedRadioButton android:id="@+id/radioOptionD"
                                                                       android:layout_width="@dimen/dp175"
                                                                       android:layout_height="wrap_content"
                                                                       tools:text="Gajah"
-                                                                      android:buttonTint="@color/philippine_gold"/>
+                                                                      android:buttonTint="@color/philippine_gold"
+                                                                      android:ellipsize="end"/>
 
                 </LinearLayout>
 

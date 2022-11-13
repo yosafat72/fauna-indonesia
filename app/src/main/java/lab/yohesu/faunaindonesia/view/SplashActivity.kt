@@ -9,7 +9,7 @@ import android.os.Looper
 import lab.yohesu.faunaindonesia.databinding.ActivitySplashScreenBinding
 
 @SuppressLint("CustomSplashScreen")
-class SplashScreen : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashScreenBinding
 
@@ -21,7 +21,7 @@ class SplashScreen : AppCompatActivity() {
         handleSplash()
     }
 
-    fun handleSplash() {
+    private fun handleSplash() {
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
