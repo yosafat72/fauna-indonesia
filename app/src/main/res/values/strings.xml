@@ -48,5 +48,6 @@
     <string name="level_02">Level 02</string>
     <string name="level_03">Level 03</string>
     <string name="next">Next</string>
+    <string name="score_0">Score : 0</string>
 
 </resources>

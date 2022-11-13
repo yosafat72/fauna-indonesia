@@ -10,7 +10,31 @@
       "optionB" : "Ikan Kakap",
       "optionC" : "Beruang Madu",
       "optionD" : "Gajah Sumatra",
-      "correctAnswer" : "D",
+      "correctAnswer" : "Gajah Sumatra",
+      "correctScore" : 10,
+      "wrongScore" : 0
+    },
+    {
+      "imageQuestion" : "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Sumatran_Tiger_Berlin_Tierpark.jpg/500px-Sumatran_Tiger_Berlin_Tierpark.jpg",
+      "soundQuestion" : "",
+      "question" : "Hewan apakah ini ?",
+      "optionA" : "Harimau Sumatra",
+      "optionB" : "Ikan Kakap",
+      "optionC" : "Beruang Madu",
+      "optionD" : "Gajah Sumatra",
+      "correctAnswer" : "Harimau Sumatra",
+      "correctScore" : 10,
+      "wrongScore" : 0
+    },
+    {
+      "imageQuestion" : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Sun_Bear_7.jpg/480px-Sun_Bear_7.jpg",
+      "soundQuestion" : "",
+      "question" : "Hewan apakah ini ?",
+      "optionA" : "Harimau Sumatra",
+      "optionB" : "Ikan Kakap",
+      "optionC" : "Beruang Madu",
+      "optionD" : "Gajah Sumatra",
+      "correctAnswer" : "Beruang Madu",
       "correctScore" : 10,
       "wrongScore" : 0
     }

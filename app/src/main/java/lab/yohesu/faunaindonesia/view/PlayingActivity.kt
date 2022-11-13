@@ -1,9 +1,9 @@
 package lab.yohesu.faunaindonesia.view
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
-import androidx.lifecycle.ViewModel
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -23,6 +23,11 @@ class PlayingActivity : AppCompatActivity() {
         ViewModelProvider(this)[PlayingViewModel::class.java]
     }
 
+    private var tempOption: String? = ""
+    private var tempScope = 0
+    private var arrPosition = 0
+    private var tempArrQuestion: List<PlayingDataModel?>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPlayingBinding.inflate(layoutInflater)
@@ -31,6 +36,41 @@ class PlayingActivity : AppCompatActivity() {
         observeViewModel()
 
         viewModel.fetchQuestionLevelOne(this)
+
+        binding.btnNext.setOnClickListener {
+            if (arrPosition < (tempArrQuestion?.size ?: 0) - 1){
+                tempArrQuestion?.get(arrPosition)?.let { calculateScore(it) }
+                arrPosition++
+                tempArrQuestion?.get(arrPosition)?.let { it1 -> setToView(it1) }
+            }else{
+                tempArrQuestion?.get(arrPosition)?.let { calculateScore(it) }
+            }
+            clearRadio()
+        }
+
+        binding.radioGroup.setOnCheckedChangeListener { _ , checkedId ->
+            val radio = binding.root.findViewById<com.jbvincey.nestedradiobutton.NestedRadioButton>(checkedId)
+            tempOption = radio.text.toString()
+        }
+    }
+
+    private fun clearRadio(){
+        binding.radioOptionA.isChecked = false
+        binding.radioOptionB.isChecked = false
+        binding.radioOptionC.isChecked = false
+        binding.radioOptionD.isChecked = false
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun calculateScore(model: PlayingDataModel){
+        if(tempOption.equals(model.correctAnswer)){
+            binding.txtScore.text = "Score : " + (tempScope + model.correctScore!!).toString()
+            tempScope += model.correctScore
+        }else{
+            binding.txtScore.text = "Score : " + (tempScope + model.wrongScore!!).toString()
+            tempScope += model.wrongScore
+        }
+        tempOption = ""
     }
 
     private fun observeViewModel() {
@@ -52,7 +92,8 @@ class PlayingActivity : AppCompatActivity() {
     private fun onSuccess(model: PlayingModel?) {
         Log.d("RESULT", model.toString())
         if (model != null) {
-            model.data?.first()?.let { setToView(model = it) }
+            tempArrQuestion = model.data!!
+            model.data.first()?.let { setToView(model = it) }
         }
     }
 

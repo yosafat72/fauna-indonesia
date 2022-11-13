@@ -6,9 +6,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.PlayingActivity"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/background">
 
     <include android:id="@+id/appbar" layout="@layout/appbar"/>
+
+    <TextView
+        android:id="@+id/txtScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginEnd="@dimen/dp20"
+        android:text="@string/score_0"
+        android:textColor="@color/black"
+        android:fontFamily="@font/dilo_world"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp10"/>
 
     <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
@@ -16,7 +30,7 @@
             app:cardElevation="@dimen/dp25"
             app:cardCornerRadius="@dimen/dp25"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dp10">
+            android:layout_marginTop="@dimen/dp50">
 
         <ImageView
                 android:id="@+id/imgQuestion"
@@ -57,7 +71,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="@dimen/dp20">
+                    android:layout_marginTop="@dimen/dp20"
+                    app:checkedButton="@+id/radioGroup">
 
                 <LinearLayout
                         android:layout_width="match_parent"
