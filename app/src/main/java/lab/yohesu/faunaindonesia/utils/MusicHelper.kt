@@ -14,6 +14,7 @@ class MusicHelper {
         mediaPlayer.setDataSource(activity, Uri.parse("android.resource://"+activity.packageName+"/"+ R.raw.main_song))
         mediaPlayer.prepare()
         mediaPlayer.start()
+        mediaPlayer.isLooping = true
     }
 
     fun pauseMusic(){
@@ -24,6 +25,7 @@ class MusicHelper {
     fun resumeMusic(){
         mediaPlayer.seekTo(musicLength)
         mediaPlayer.start()
+        mediaPlayer.isLooping = true
     }
 
     fun stopMusic(){

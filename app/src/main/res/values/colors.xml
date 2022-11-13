@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#808080</color>
+    <color name="philippine_gold">#BC6F03</color>
+    <color name="chocolate">#874000</color>
 </resources>

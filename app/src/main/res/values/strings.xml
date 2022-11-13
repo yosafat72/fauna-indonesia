@@ -43,5 +43,9 @@
     <string name="cendrawasi_merah">Cendrawasi Merah</string>
     <string name="cendrawasi_kawat">Cendrawasi 12 Kawat</string>
     <string name="cancel">Cancel</string>
+    <string name="choose_the_level_you_want_to_play">Choose the level\nyou want to play</string>
+    <string name="level_01">Level 01</string>
+    <string name="level_02">Level 02</string>
+    <string name="level_03">Level 03</string>
 
 </resources>

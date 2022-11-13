@@ -8,6 +8,8 @@
         tools:context=".view.MenuActivity"
         android:background="@drawable/background">
 
+    <include android:id="@+id/appbar" layout="@layout/appbar"/>
+
     <com.airbnb.lottie.LottieAnimationView
             android:layout_width="@dimen/dp250"
             android:layout_height="@dimen/dp250"
@@ -15,7 +17,8 @@
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/dp50"
+            android:layout_below="@+id/appbar"
+            android:layout_marginTop="@dimen/dp25"
     />
 
     <Button

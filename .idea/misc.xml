@@ -10,9 +10,14 @@
         <entry key="app/src/main/res/layout/activity_learning.xml" value="0.22291666666666668" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2359375" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/activity_playing.xml" value="0.22291666666666668" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1693840579710145" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/appbar.xml" value="0.2286011552584505" />
         <entry key="app/src/main/res/layout/custom_view_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dialog_exit.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/dialog_leaderboard_level.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/dialog_playing_level.xml" value="0.23697916666666666" />
       </map>
     </option>
   </component>

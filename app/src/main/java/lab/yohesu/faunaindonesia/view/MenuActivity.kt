@@ -12,6 +12,7 @@ class MenuActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMenuBinding
     private val musicHelper: MusicHelper by lazy { MusicHelper() }
+    private val alertHelper: AlertHelper by lazy { AlertHelper() }
 
     //timer
     var backPressedTime: Long = 0
@@ -24,11 +25,19 @@ class MenuActivity : AppCompatActivity() {
         musicHelper.playMusic(this)
 
         binding.btnExit.setOnClickListener {
-            AlertHelper().AlertClose(this)
+            alertHelper.AlertClose(this)
         }
 
         binding.btnStudy.setOnClickListener {
             startActivity(Intent(this, LearningActivity::class.java))
+        }
+
+        binding.btnPlay.setOnClickListener {
+            alertHelper.AlertPlayingLevel(this)
+        }
+
+        binding.btnLeaderboard.setOnClickListener {
+            alertHelper.AlertLeaderBoardLevel(this)
         }
 
     }

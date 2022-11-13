@@ -8,16 +8,19 @@
     tools:context=".view.LearningActivity"
     android:background="@drawable/background">
 
+    <include android:id="@+id/appbar" layout="@layout/appbar"/>
+
     <TextView
         android:id="@+id/txtAnimal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="@string/app_name"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dp50"
+        android:layout_marginTop="@dimen/dp25"
         android:fontFamily="@font/dilo_world"
         android:textColor="@color/white"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        android:layout_below="@+id/appbar"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardImage"
