@@ -1,6 +1,7 @@
 package lab.yohesu.faunaindonesia.view
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -17,11 +18,12 @@ import lab.yohesu.faunaindonesia.model.LeaderboardDataModel
 import lab.yohesu.faunaindonesia.model.PlayingDataModel
 import lab.yohesu.faunaindonesia.model.PlayingModel
 import lab.yohesu.faunaindonesia.service.Status
+import lab.yohesu.faunaindonesia.utils.AlertClickListener
 import lab.yohesu.faunaindonesia.utils.AlertHelper
 import lab.yohesu.faunaindonesia.viewmodel.PlayingViewModel
 import lab.yohesu.faunaindonesia.viewmodel.factory.ViewModelFactory
 
-class PlayingActivity : AppCompatActivity() {
+class PlayingActivity : AppCompatActivity(), AlertClickListener {
 
     private lateinit var binding: ActivityPlayingBinding
     private val viewModel : PlayingViewModel by lazy {
@@ -40,6 +42,8 @@ class PlayingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPlayingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        alertHelper.listener = this
 
         observeViewModel()
 
@@ -98,6 +102,9 @@ class PlayingActivity : AppCompatActivity() {
 
     private fun onSuccessInsert(model: PlayingModel?) {
         Log.d("RESULT_INSERT", model.toString())
+        val intent = Intent(this, MenuActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent)
     }
 
     private fun onLoading() {
@@ -124,6 +131,17 @@ class PlayingActivity : AppCompatActivity() {
         model.optionD.let { binding.radioOptionD.text = it }
         model.imageQuestion.let { Glide.with(this).load(it).fitCenter().into(binding.imgQuestion) }
 
+    }
+
+    override fun onCloseAlertGameOver(name: String, score: Int) {
+        viewModel.insertIntoRoom(
+            LeaderboardDataModel(
+                id = (0..1000).shuffled().last(),
+                name = name,
+                score = score,
+                level = 1,
+            )
+        )
     }
 
 }

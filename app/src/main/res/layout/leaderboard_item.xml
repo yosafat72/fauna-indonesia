@@ -16,11 +16,9 @@
                 android:padding="@dimen/dp15">
 
             <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieBadge"
                     android:layout_width="@dimen/dp40"
                     android:layout_height="@dimen/dp40"
-                    app:lottie_rawRes="@raw/winner_01"
-                    app:lottie_autoPlay="true"
-                    app:lottie_loop="true"
                     android:layout_gravity="center_horizontal"/>
 
             <LinearLayout

@@ -12,6 +12,7 @@
             android:roundIcon="@drawable/logo"
             android:supportsRtl="true"
             android:theme="@style/Theme.FaunaIndonesia"
+            android:largeHeap="true"
             tools:ignore="AllowBackup">
         <activity
                 android:name=".view.LeaderboardActivity"

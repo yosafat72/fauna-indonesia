@@ -10,16 +10,24 @@ import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.Window
 import android.view.WindowManager
+import io.github.serpro69.kfaker.faker
 import lab.yohesu.faunaindonesia.databinding.DialogExitBinding
 import lab.yohesu.faunaindonesia.databinding.DialogGameOverBinding
 import lab.yohesu.faunaindonesia.databinding.DialogLeaderboardLevelBinding
 import lab.yohesu.faunaindonesia.databinding.DialogPlayingLevelBinding
 import lab.yohesu.faunaindonesia.view.LeaderboardActivity
-import lab.yohesu.faunaindonesia.view.MenuActivity
 import lab.yohesu.faunaindonesia.view.PlayingActivity
 import kotlin.system.exitProcess
 
+
+interface AlertClickListener {
+    fun onCloseAlertGameOver(name: String, score: Int)
+}
+
 class AlertHelper {
+
+    var listener: AlertClickListener? = null
+    val faker = faker {  }
 
     fun AlertClose(ctx: Context){
         val dialog = Dialog(ctx)
@@ -63,16 +71,19 @@ class AlertHelper {
         dialogBinding.btnLevel01.setOnClickListener {
             val intent = Intent(activity, PlayingActivity::class.java)
             activity.startActivity(intent)
+            dialog.dismiss()
         }
 
         dialogBinding.btnLevel02.setOnClickListener {
             val intent = Intent(activity, PlayingActivity::class.java)
             activity.startActivity(intent)
+            dialog.dismiss()
         }
 
         dialogBinding.btnLevel03.setOnClickListener {
             val intent = Intent(activity, PlayingActivity::class.java)
             activity.startActivity(intent)
+            dialog.dismiss()
         }
 
         dialogBinding.btnDismiss.setOnClickListener {
@@ -102,16 +113,19 @@ class AlertHelper {
         dialogBinding.btnLevel01.setOnClickListener {
             val intent = Intent(activity, LeaderboardActivity::class.java)
             activity.startActivity(intent)
+            dialog.dismiss()
         }
 
         dialogBinding.btnLevel02.setOnClickListener {
             val intent = Intent(activity, PlayingActivity::class.java)
             activity.startActivity(intent)
+            dialog.dismiss()
         }
 
         dialogBinding.btnLevel03.setOnClickListener {
             val intent = Intent(activity, PlayingActivity::class.java)
             activity.startActivity(intent)
+            dialog.dismiss()
         }
 
         dialogBinding.btnDismiss.setOnClickListener {
@@ -139,12 +153,16 @@ class AlertHelper {
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.window?.attributes = layoutParams
 
+        dialogBinding.txtName.setText(faker.name.firstName())
         dialogBinding.txtScore.text = "Your score is $score"
 
         dialogBinding.btnBackToMenu.setOnClickListener {
-            val intent = Intent(activity, MenuActivity::class.java)
-            activity.startActivity(intent)
-            activity.finishAffinity()
+            dialog.dismiss()
+            listener?.onCloseAlertGameOver(
+                dialogBinding.txtName.text.toString(),
+                score
+            )
+
         }
 
         dialog.show()
