@@ -4,6 +4,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import lab.yohesu.faunaindonesia.database.DatabaseHelper
 import lab.yohesu.faunaindonesia.database.LeaderboardDao
+import lab.yohesu.faunaindonesia.model.LeaderboardDataModel
 import lab.yohesu.faunaindonesia.model.LeaderboardModel
 import lab.yohesu.faunaindonesia.service.State
 

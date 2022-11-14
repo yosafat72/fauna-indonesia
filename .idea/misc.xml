@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/rounded_button.xml" value="0.253125" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.2520833333333333" />
         <entry key="app/src/main/res/drawable/roundedbutton.xml" value="0.2520833333333333" />
+        <entry key="app/src/main/res/layout/activity_leaderboard.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/layout/activity_learning.xml" value="0.22291666666666668" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2359375" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.23697916666666666" />
@@ -19,6 +20,7 @@
         <entry key="app/src/main/res/layout/dialog_game_over.xml" value="0.22291666666666668" />
         <entry key="app/src/main/res/layout/dialog_leaderboard_level.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/layout/dialog_playing_level.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/leaderboard_item.xml" value="0.23697916666666666" />
       </map>
     </option>
   </component>

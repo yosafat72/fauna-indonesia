@@ -10,18 +10,22 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import lab.yohesu.faunaindonesia.database.DatabaseBuilder
+import lab.yohesu.faunaindonesia.database.DatabaseHelperImp
 import lab.yohesu.faunaindonesia.databinding.ActivityPlayingBinding
+import lab.yohesu.faunaindonesia.model.LeaderboardDataModel
 import lab.yohesu.faunaindonesia.model.PlayingDataModel
 import lab.yohesu.faunaindonesia.model.PlayingModel
 import lab.yohesu.faunaindonesia.service.Status
 import lab.yohesu.faunaindonesia.utils.AlertHelper
 import lab.yohesu.faunaindonesia.viewmodel.PlayingViewModel
+import lab.yohesu.faunaindonesia.viewmodel.factory.ViewModelFactory
 
 class PlayingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPlayingBinding
     private val viewModel : PlayingViewModel by lazy {
-        ViewModelProvider(this)[PlayingViewModel::class.java]
+        ViewModelProvider(this, ViewModelFactory(DatabaseHelperImp(DatabaseBuilder.getInstance(applicationContext))))[PlayingViewModel::class.java]
     }
     private val alertHelper: AlertHelper by lazy {
         AlertHelper()
@@ -85,10 +89,15 @@ class PlayingActivity : AppCompatActivity() {
                     Status.LOADING -> onLoading()
                     Status.SUCCESS -> onSuccess(it.data)
                     Status.ERROR -> onError(it.message)
+                    Status.SUCCESS_INSERT_TO_ROOM -> onSuccessInsert(it.data)
                     else -> {}
                 }
             }
         }
+    }
+
+    private fun onSuccessInsert(model: PlayingModel?) {
+        Log.d("RESULT_INSERT", model.toString())
     }
 
     private fun onLoading() {

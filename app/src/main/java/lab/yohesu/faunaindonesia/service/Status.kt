@@ -5,4 +5,5 @@ enum class Status {
     SUCCESS,
     ERROR,
     LOADING,
+    SUCCESS_INSERT_TO_ROOM,
 }

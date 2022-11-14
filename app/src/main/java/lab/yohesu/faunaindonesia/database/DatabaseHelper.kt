@@ -5,5 +5,6 @@ import lab.yohesu.faunaindonesia.model.LeaderboardDataModel
 interface DatabaseHelper {
 
     suspend fun getAllLeaderboards() : List<LeaderboardDataModel>
+    suspend fun insertLeaderboard(data: LeaderboardDataModel)
 
 }

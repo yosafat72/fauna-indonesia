@@ -1,17 +1,21 @@
 package lab.yohesu.faunaindonesia.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import lab.yohesu.faunaindonesia.adapter.LeaderboardAdapter
 import lab.yohesu.faunaindonesia.database.DatabaseBuilder
-import lab.yohesu.faunaindonesia.database.DatabaseHelper
 import lab.yohesu.faunaindonesia.database.DatabaseHelperImp
 import lab.yohesu.faunaindonesia.databinding.ActivityLeaderboardBinding
+import lab.yohesu.faunaindonesia.model.LeaderboardDataModel
 import lab.yohesu.faunaindonesia.model.LeaderboardModel
 import lab.yohesu.faunaindonesia.service.Status
 import lab.yohesu.faunaindonesia.viewmodel.LeaderboardViewModel
@@ -25,6 +29,8 @@ class LeaderboardActivity : AppCompatActivity() {
         ViewModelProvider(this, ViewModelFactory(DatabaseHelperImp(DatabaseBuilder.getInstance(applicationContext))))[LeaderboardViewModel::class.java]
     }
 
+    private lateinit var leaderboardAdapter: LeaderboardAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLeaderboardBinding.inflate(layoutInflater)
@@ -34,6 +40,13 @@ class LeaderboardActivity : AppCompatActivity() {
 
         viewModel.fetchAllLeaderboards()
 
+        setupRecycler()
+
+    }
+
+    private fun setupRecycler(){
+        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
+        binding.recyclerLeaderboard.layoutManager = layoutManager
     }
 
     private fun observeViewModel(){
@@ -53,8 +66,13 @@ class LeaderboardActivity : AppCompatActivity() {
         Log.d("Running-Error", "$message")
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun onSuccess(model: LeaderboardModel?) {
         Log.d("RESULT", model.toString())
+        if (model != null) {
+            leaderboardAdapter = LeaderboardAdapter(model.data as List<LeaderboardDataModel>)
+            binding.recyclerLeaderboard.adapter = leaderboardAdapter
+        }
     }
 
     private fun onLoading() {

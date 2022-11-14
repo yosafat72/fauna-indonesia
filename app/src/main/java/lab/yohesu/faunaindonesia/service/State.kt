@@ -24,5 +24,9 @@ data class State<out T>(
         fun<T> idle(): State<T>{
             return State(Status.IDLE, null, null)
         }
+
+        fun <T> successInsertToRoom(data: T?): State<T>{
+            return State(Status.SUCCESS_INSERT_TO_ROOM, data, null)
+        }
     }
 }
