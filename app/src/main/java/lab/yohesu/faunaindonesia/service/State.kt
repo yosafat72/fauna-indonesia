@@ -1,12 +1,13 @@
 package lab.yohesu.faunaindonesia.service
 
+import lab.yohesu.faunaindonesia.model.LeaderboardModel
 import lab.yohesu.faunaindonesia.model.LearningModel
 
 data class State<out T>(
     val status: Status,
     val data: T?,
     val message: String?
-){
+) {
     companion object{
         fun<T> success(data: T?): State<T & Any> {
             return State(Status.SUCCESS, data, null)

@@ -14,6 +14,7 @@ import lab.yohesu.faunaindonesia.databinding.DialogExitBinding
 import lab.yohesu.faunaindonesia.databinding.DialogGameOverBinding
 import lab.yohesu.faunaindonesia.databinding.DialogLeaderboardLevelBinding
 import lab.yohesu.faunaindonesia.databinding.DialogPlayingLevelBinding
+import lab.yohesu.faunaindonesia.view.LeaderboardActivity
 import lab.yohesu.faunaindonesia.view.MenuActivity
 import lab.yohesu.faunaindonesia.view.PlayingActivity
 import kotlin.system.exitProcess
@@ -99,7 +100,7 @@ class AlertHelper {
         dialog.window?.attributes = layoutParams
 
         dialogBinding.btnLevel01.setOnClickListener {
-            val intent = Intent(activity, PlayingActivity::class.java)
+            val intent = Intent(activity, LeaderboardActivity::class.java)
             activity.startActivity(intent)
         }
 

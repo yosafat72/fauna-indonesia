@@ -14,6 +14,9 @@
             android:theme="@style/Theme.FaunaIndonesia"
             tools:ignore="AllowBackup">
         <activity
+                android:name=".view.LeaderboardActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".view.PlayingActivity"
                 android:exported="true"/>
         <activity
