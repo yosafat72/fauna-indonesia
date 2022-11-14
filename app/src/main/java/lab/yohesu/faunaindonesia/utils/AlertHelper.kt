@@ -153,7 +153,7 @@ class AlertHelper {
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.window?.attributes = layoutParams
 
-        dialogBinding.txtName.setText(faker.name.firstName())
+        dialogBinding.txtName.setText(faker.name.firstName() + " " + faker.name.lastName())
         dialogBinding.txtScore.text = "Your score is $score"
 
         dialogBinding.btnBackToMenu.setOnClickListener {
