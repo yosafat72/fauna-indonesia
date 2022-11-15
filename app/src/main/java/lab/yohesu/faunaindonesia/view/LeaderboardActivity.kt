@@ -15,8 +15,8 @@ import lab.yohesu.faunaindonesia.adapter.LeaderboardAdapter
 import lab.yohesu.faunaindonesia.database.DatabaseBuilder
 import lab.yohesu.faunaindonesia.database.DatabaseHelperImp
 import lab.yohesu.faunaindonesia.databinding.ActivityLeaderboardBinding
-import lab.yohesu.faunaindonesia.model.LeaderboardDataModel
 import lab.yohesu.faunaindonesia.model.LeaderboardModel
+import lab.yohesu.faunaindonesia.model.UIModel
 import lab.yohesu.faunaindonesia.service.Status
 import lab.yohesu.faunaindonesia.viewmodel.LeaderboardViewModel
 import lab.yohesu.faunaindonesia.viewmodel.factory.ViewModelFactory
@@ -67,10 +67,11 @@ class LeaderboardActivity : AppCompatActivity() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private fun onSuccess(model: LeaderboardModel?) {
+    private fun onSuccess(model: UIModel<Any>?) {
         Log.d("RESULT", model.toString())
         if (model != null) {
-            leaderboardAdapter = LeaderboardAdapter(model.data as List<LeaderboardDataModel>)
+            val dataModel = model.dataModel as LeaderboardModel
+            leaderboardAdapter = LeaderboardAdapter(dataModel.data)
             binding.recyclerLeaderboard.adapter = leaderboardAdapter
         }
     }
