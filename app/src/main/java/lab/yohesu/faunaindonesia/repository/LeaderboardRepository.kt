@@ -16,7 +16,14 @@ class LeaderboardRepository(private val helper: DatabaseHelper) {
             val converters = LeaderboardModel(success = true, message = "Success", data = result)
             emit(State.success(converters))
         }
+    }
 
+    suspend fun deleteLeaderboard(model: LeaderboardDataModel) : Flow<State<LeaderboardModel>>{
+        return flow {
+            helper.deleteLeaderboard(model)
+            val converters = LeaderboardModel(success = true, message = "Success Deleted", data = null)
+            emit(State.success(converters))
+        }
     }
 
 }

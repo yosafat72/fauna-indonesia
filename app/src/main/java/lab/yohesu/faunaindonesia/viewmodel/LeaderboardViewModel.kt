@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import lab.yohesu.faunaindonesia.database.DatabaseHelper
+import lab.yohesu.faunaindonesia.model.LeaderboardDataModel
 import lab.yohesu.faunaindonesia.model.UIModel
 import lab.yohesu.faunaindonesia.repository.LeaderboardRepository
 import lab.yohesu.faunaindonesia.service.State
@@ -36,6 +37,26 @@ class LeaderboardViewModel(dbHelper: DatabaseHelper) : ViewModel(){
                     state.value = State.success(model)
                 }
 
+        }
+    }
+
+    fun deleteLeaderboard(dataModel: LeaderboardDataModel){
+        state.value = State.loading()
+        viewModelScope.launch {
+            repository.deleteLeaderboard(model = dataModel)
+                .catch {
+                    state.value = it.localizedMessage?.let { it1 -> State.error(it1) }!!
+                }
+                .collectLatest {
+                    repository.getAllLeaderboards()
+                        .catch {
+                            state.value = it.localizedMessage?.let { it1 -> State.error(it1) }!!
+                        }
+                        .collectLatest {
+                            val model = UIModel<Any>(dataModel = it.data)
+                            state.value = State.success(model)
+                        }
+                }
         }
     }
 

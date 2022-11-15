@@ -6,5 +6,8 @@ interface DatabaseHelper {
 
     suspend fun getAllLeaderboards() : List<LeaderboardDataModel>
     suspend fun insertLeaderboard(data: LeaderboardDataModel)
+    suspend fun deleteLeaderboard(data: LeaderboardDataModel)
+
+    suspend fun deleteById(id: Int)
 
 }

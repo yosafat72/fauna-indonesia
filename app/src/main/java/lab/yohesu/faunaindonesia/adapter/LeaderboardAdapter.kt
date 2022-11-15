@@ -1,5 +1,6 @@
 package lab.yohesu.faunaindonesia.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -41,6 +42,12 @@ class LeaderboardAdapter(var data: List<LeaderboardDataModel?>?) : RecyclerView.
     fun removeAt(position: Int){
         data?.drop(position)
         notifyItemRemoved(position)
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun fetchData(model: List<LeaderboardDataModel?>?){
+        data = model
+        notifyDataSetChanged()
     }
 
 

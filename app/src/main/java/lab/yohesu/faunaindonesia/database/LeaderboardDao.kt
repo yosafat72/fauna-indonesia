@@ -22,4 +22,7 @@ interface LeaderboardDao {
     @Query("Select * from tbl_leaderboard order by score desc")
     fun getAllLeaderboards(): List<LeaderboardDataModel>
 
+    @Query("Delete from tbl_leaderboard where id = :id")
+    fun deleteById(id: Int)
+
 }

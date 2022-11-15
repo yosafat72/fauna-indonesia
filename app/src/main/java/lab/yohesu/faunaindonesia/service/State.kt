@@ -28,5 +28,9 @@ data class State<out T>(
         fun <T> successInsertToRoom(data: T?): State<T>{
             return State(Status.SUCCESS_INSERT_TO_ROOM, data, null)
         }
+
+        fun <T> successDeleteToRoom(data: T?): State<T>{
+            return State(Status.SUCCESS_DELETED_TO_ROOM, data, null)
+        }
     }
 }
