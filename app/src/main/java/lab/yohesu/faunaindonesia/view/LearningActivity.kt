@@ -14,6 +14,7 @@ import kotlinx.coroutines.launch
 import lab.yohesu.faunaindonesia.databinding.ActivityLearningBinding
 import lab.yohesu.faunaindonesia.model.LearningDataModel
 import lab.yohesu.faunaindonesia.model.LearningModel
+import lab.yohesu.faunaindonesia.model.UIModel
 import lab.yohesu.faunaindonesia.service.Status
 import lab.yohesu.faunaindonesia.viewmodel.LearningViewModel
 
@@ -70,11 +71,12 @@ class LearningActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun onSuccess(model: LearningModel?) {
+    private fun onSuccess(model: UIModel<Any>?) {
         Log.d("RESULT", model.toString())
         if (model != null) {
-            tempArrAnimal = model.data!!
-            model.data.first()?.let { setLearning(it) }
+            val dataModel = model.dataModel as LearningModel
+            tempArrAnimal = dataModel.data
+            tempArrAnimal?.first()?.let { setLearning(it) }
         }
     }
 
