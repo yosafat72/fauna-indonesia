@@ -38,5 +38,10 @@ class LeaderboardAdapter(var data: List<LeaderboardDataModel?>?) : RecyclerView.
        }
     }
 
+    fun removeAt(position: Int){
+        data?.drop(position)
+        notifyItemRemoved(position)
+    }
+
 
 }

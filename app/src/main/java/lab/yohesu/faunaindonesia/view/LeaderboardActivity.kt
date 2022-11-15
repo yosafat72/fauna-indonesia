@@ -1,17 +1,21 @@
 package lab.yohesu.faunaindonesia.view
 
 import android.annotation.SuppressLint
+import android.graphics.Canvas
 import android.os.Bundle
 import android.util.Log
+import android.widget.SimpleAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import lab.yohesu.faunaindonesia.adapter.LeaderboardAdapter
+import lab.yohesu.faunaindonesia.adapter.callback.SwipeToDeleteCallback
 import lab.yohesu.faunaindonesia.database.DatabaseBuilder
 import lab.yohesu.faunaindonesia.database.DatabaseHelperImp
 import lab.yohesu.faunaindonesia.databinding.ActivityLeaderboardBinding
@@ -47,6 +51,17 @@ class LeaderboardActivity : AppCompatActivity() {
     private fun setupRecycler(){
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         binding.recyclerLeaderboard.layoutManager = layoutManager
+
+        //Swipe
+        val swipeHandler = object : SwipeToDeleteCallback(context = this){
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                leaderboardAdapter.removeAt(viewHolder.adapterPosition)
+            }
+        }
+
+        val itemTouchHelper = ItemTouchHelper(swipeHandler)
+        itemTouchHelper.attachToRecyclerView(binding.recyclerLeaderboard)
+
     }
 
     private fun observeViewModel(){
