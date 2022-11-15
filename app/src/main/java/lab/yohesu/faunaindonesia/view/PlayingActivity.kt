@@ -17,6 +17,7 @@ import lab.yohesu.faunaindonesia.databinding.ActivityPlayingBinding
 import lab.yohesu.faunaindonesia.model.LeaderboardDataModel
 import lab.yohesu.faunaindonesia.model.PlayingDataModel
 import lab.yohesu.faunaindonesia.model.PlayingModel
+import lab.yohesu.faunaindonesia.model.UIModel
 import lab.yohesu.faunaindonesia.service.Status
 import lab.yohesu.faunaindonesia.utils.AlertClickListener
 import lab.yohesu.faunaindonesia.utils.AlertHelper
@@ -100,21 +101,22 @@ class PlayingActivity : AppCompatActivity(), AlertClickListener {
         }
     }
 
-    private fun onSuccessInsert(model: PlayingModel?) {
+    private fun onSuccessInsert(model: UIModel<Any>?) {
         Log.d("RESULT_INSERT", model.toString())
         val intent = Intent(this, MenuActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 
     private fun onLoading() {
     }
 
-    private fun onSuccess(model: PlayingModel?) {
+    private fun onSuccess(model: UIModel<Any>?) {
         Log.d("RESULT", model.toString())
         if (model != null) {
-            tempArrQuestion = model.data!!
-            model.data.first()?.let { setToView(model = it) }
+            val objects = model.dataModel  as PlayingModel
+            tempArrQuestion = objects.data
+            tempArrQuestion?.first()?.let { setToView(model = it) }
         }
     }
 

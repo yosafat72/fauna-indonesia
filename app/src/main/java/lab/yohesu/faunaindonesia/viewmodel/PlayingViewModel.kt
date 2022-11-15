@@ -10,9 +10,11 @@ import kotlinx.coroutines.launch
 import lab.yohesu.faunaindonesia.database.DatabaseHelper
 import lab.yohesu.faunaindonesia.model.LeaderboardDataModel
 import lab.yohesu.faunaindonesia.model.PlayingModel
+import lab.yohesu.faunaindonesia.model.UIModel
 import lab.yohesu.faunaindonesia.repository.PlayingRepository
 import lab.yohesu.faunaindonesia.service.State
 import lab.yohesu.faunaindonesia.service.Status
+import java.util.Objects
 
 class PlayingViewModel(dbHelper: DatabaseHelper) : ViewModel() {
 
@@ -21,7 +23,7 @@ class PlayingViewModel(dbHelper: DatabaseHelper) : ViewModel() {
     val state = MutableStateFlow(
         State(
             Status.IDLE,
-            PlayingModel(),
+            UIModel<Any>(),
             ""
         )
     )
@@ -34,7 +36,8 @@ class PlayingViewModel(dbHelper: DatabaseHelper) : ViewModel() {
                     state.value = it.localizedMessage?.let { it1 -> State.error(it1) }!!
                 }
                 .collectLatest {
-                    state.value = State.success(it.data)
+                    val model = UIModel<Any>(dataModel = it.data)
+                    state.value = State.success(model)
                 }
         }
     }
@@ -47,7 +50,7 @@ class PlayingViewModel(dbHelper: DatabaseHelper) : ViewModel() {
                     state.value = it.localizedMessage?.let { it1 -> State.error(it1) }!!
                 }
                 .collectLatest {
-                    val model = PlayingModel(success = it.data?.success, message = it.data?.message)
+                    val model = UIModel<Any>(dataModel = it.data)
                     state.value = State.successInsertToRoom(model)
                 }
         }
