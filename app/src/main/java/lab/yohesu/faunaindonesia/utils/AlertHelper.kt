@@ -70,20 +70,20 @@ class AlertHelper {
 
         dialogBinding.btnLevel01.setOnClickListener {
             val intent = Intent(activity, PlayingActivity::class.java)
+            intent.putExtra("gameLevel", 1)
             activity.startActivity(intent)
-            dialog.dismiss()
         }
 
         dialogBinding.btnLevel02.setOnClickListener {
             val intent = Intent(activity, PlayingActivity::class.java)
+            intent.putExtra("gameLevel", 2)
             activity.startActivity(intent)
-            dialog.dismiss()
         }
 
         dialogBinding.btnLevel03.setOnClickListener {
             val intent = Intent(activity, PlayingActivity::class.java)
+            intent.putExtra("gameLevel", 3)
             activity.startActivity(intent)
-            dialog.dismiss()
         }
 
         dialogBinding.btnDismiss.setOnClickListener {

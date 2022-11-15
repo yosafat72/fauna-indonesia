@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import lab.yohesu.faunaindonesia.R
 import lab.yohesu.faunaindonesia.database.DatabaseBuilder
 import lab.yohesu.faunaindonesia.database.DatabaseHelperImp
 import lab.yohesu.faunaindonesia.databinding.ActivityPlayingBinding
@@ -21,6 +22,7 @@ import lab.yohesu.faunaindonesia.model.UIModel
 import lab.yohesu.faunaindonesia.service.Status
 import lab.yohesu.faunaindonesia.utils.AlertClickListener
 import lab.yohesu.faunaindonesia.utils.AlertHelper
+import lab.yohesu.faunaindonesia.utils.MusicHelper
 import lab.yohesu.faunaindonesia.viewmodel.PlayingViewModel
 import lab.yohesu.faunaindonesia.viewmodel.factory.ViewModelFactory
 
@@ -34,6 +36,12 @@ class PlayingActivity : AppCompatActivity(), AlertClickListener {
         AlertHelper()
     }
 
+    private val musicHelper: MusicHelper by lazy {
+        MusicHelper()
+    }
+
+    private var gameLevel: Int = 0
+
     private var tempOption: String? = ""
     private var tempScope = 0
     private var arrPosition = 0
@@ -44,11 +52,18 @@ class PlayingActivity : AppCompatActivity(), AlertClickListener {
         binding = ActivityPlayingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        val intent = intent
+        gameLevel = intent.getIntExtra("gameLevel", 1)
+
         alertHelper.listener = this
 
         observeViewModel()
 
-        viewModel.fetchQuestionLevelOne(this)
+        if (gameLevel == 1){
+            viewModel.fetchQuestionLevelOne(this)
+        }else if(gameLevel == 2){
+            viewModel.fetchQuestionLevelTwo(this)
+        }
 
         binding.btnNext.setOnClickListener {
             if (arrPosition < (tempArrQuestion?.size ?: 0) - 1){
@@ -131,7 +146,27 @@ class PlayingActivity : AppCompatActivity(), AlertClickListener {
         model.optionB.let { binding.radioOptionB.text = it }
         model.optionC.let { binding.radioOptionC.text = it }
         model.optionD.let { binding.radioOptionD.text = it }
-        model.imageQuestion.let { Glide.with(this).load(it).fitCenter().into(binding.imgQuestion) }
+
+        when (gameLevel) {
+            1 -> {
+                model.imageQuestion.let { Glide.with(this).load(it).fitCenter().into(binding.imgQuestion) }
+            }
+            2 -> {
+                binding.imgQuestion.setImageResource(R.drawable.sound_wave)
+                model.soundQuestion.let {
+                    if (it != null) {
+                        musicHelper.playMusicQuestion(it)
+                    }
+                }
+            }
+            3 -> {
+                model.imageQuestion.let { Glide.with(this).load(it).fitCenter().into(binding.imgQuestion) }
+            }
+            else -> {
+                model.imageQuestion.let { Glide.with(this).load(it).fitCenter().into(binding.imgQuestion) }
+            }
+        }
+
 
     }
 
@@ -141,10 +176,30 @@ class PlayingActivity : AppCompatActivity(), AlertClickListener {
                 id = (0..1000).shuffled().last(),
                 name = name,
                 score = score,
-                level = 1,
+                level = gameLevel,
             )
         )
     }
 
+    override fun onResume() {
+        super.onResume()
+        if(gameLevel == 2){
+            musicHelper.resumeMusic()
+        }
+    }
+
+    override fun onPause() {
+        if(gameLevel == 2){
+            musicHelper.pauseMusic()
+        }
+        super.onPause()
+    }
+
+    override fun onDestroy() {
+        if (gameLevel == 2){
+            musicHelper.stopMusic()
+        }
+        super.onDestroy()
+    }
 }
 

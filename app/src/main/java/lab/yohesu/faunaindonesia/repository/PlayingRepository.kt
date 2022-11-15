@@ -23,6 +23,13 @@ class PlayingRepository(private val helper: DatabaseHelper) {
         }.flowOn(Dispatchers.IO)
     }
 
+    suspend fun getQuestionLevelTwo(ctx: Context) : Flow<State<PlayingModel>>{
+        return flow {
+            val result = JsonReader().getJsonFile(ctx = ctx, fileName = JsonConstanta.PLAYING_LEVEL_TWO)
+            emit(State.success(Gson().fromJson(result, PlayingModel::class.java)))
+        }.flowOn(Dispatchers.IO)
+    }
+
     suspend fun insertLeaderboard(data: LeaderboardDataModel) : Flow<State<LeaderboardModel>>{
         return flow {
             helper.insertLeaderboard(data = data)

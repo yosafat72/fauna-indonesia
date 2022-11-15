@@ -9,12 +9,10 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import lab.yohesu.faunaindonesia.database.DatabaseHelper
 import lab.yohesu.faunaindonesia.model.LeaderboardDataModel
-import lab.yohesu.faunaindonesia.model.PlayingModel
 import lab.yohesu.faunaindonesia.model.UIModel
 import lab.yohesu.faunaindonesia.repository.PlayingRepository
 import lab.yohesu.faunaindonesia.service.State
 import lab.yohesu.faunaindonesia.service.Status
-import java.util.Objects
 
 class PlayingViewModel(dbHelper: DatabaseHelper) : ViewModel() {
 
@@ -32,6 +30,20 @@ class PlayingViewModel(dbHelper: DatabaseHelper) : ViewModel() {
         state.value = State.loading()
         viewModelScope.launch {
             repository.getQuestionLevelOne(ctx = ctx)
+                .catch {
+                    state.value = it.localizedMessage?.let { it1 -> State.error(it1) }!!
+                }
+                .collectLatest {
+                    val model = UIModel<Any>(dataModel = it.data)
+                    state.value = State.success(model)
+                }
+        }
+    }
+
+    fun fetchQuestionLevelTwo(ctx: Context){
+        state.value = State.loading()
+        viewModelScope.launch {
+            repository.getQuestionLevelTwo(ctx = ctx)
                 .catch {
                     state.value = it.localizedMessage?.let { it1 -> State.error(it1) }!!
                 }

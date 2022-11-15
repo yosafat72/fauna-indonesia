@@ -1,0 +1,66 @@
+{
+  "success" : true,
+  "message" : "Success",
+  "data" : [
+    {
+      "imageQuestion" : "",
+      "soundQuestion" : "www.google.com/logos/fnbx/animal_sounds/tiger.mp3",
+      "question" : "Suara Hewan Apakah ini ?",
+      "optionA" : "Harimau Sumatra",
+      "optionB" : "Biawak Komodo",
+      "optionC" : "Beruang Madu",
+      "optionD" : "Gajah Sumatra",
+      "correctAnswer" : "Harimau Sumatra",
+      "correctScore" : 20,
+      "wrongScore" : 0
+    },
+    {
+      "imageQuestion" : "",
+      "soundQuestion" : "www.google.com/logos/fnbx/animal_sounds/elephant.mp3",
+      "question" : "Suara Hewan Apakah ini ?",
+      "optionA" : "Harimau Sumatra",
+      "optionB" : "Biawak Komodo",
+      "optionC" : "Beruang Madu",
+      "optionD" : "Gajah Sumatra",
+      "correctAnswer" : "Gajah Sumatra",
+      "correctScore" : 20,
+      "wrongScore" : 0
+    },
+    {
+      "imageQuestion" : "",
+      "soundQuestion" : "www.google.com/logos/fnbx/animal_sounds/komodo-dragon.mp3",
+      "question" : "Suara Hewan Apakah ini ?",
+      "optionA" : "Harimau Sumatra",
+      "optionB" : "Biawak Komodo",
+      "optionC" : "Beruang Madu",
+      "optionD" : "Gajah Sumatra",
+      "correctAnswer" : "Biawak Komodo",
+      "correctScore" : 20,
+      "wrongScore" : 0
+    },
+    {
+      "imageQuestion" : "",
+      "soundQuestion" : "www.google.com/logos/fnbx/animal_sounds/leopard.mp3",
+      "question" : "Suara Hewan Apakah ini ?",
+      "optionA" : "Harimau Sumatra",
+      "optionB" : "Biawak Komodo",
+      "optionC" : "Macan Tutul Jawa",
+      "optionD" : "Gajah Sumatra",
+      "correctAnswer" : "Macan Tutul Jawa",
+      "correctScore" : 20,
+      "wrongScore" : 0
+    },
+    {
+      "imageQuestion" : "",
+      "soundQuestion" : "www.google.com/logos/fnbx/animal_sounds/rooster.mp3",
+      "question" : "Suara Hewan Apakah ini ?",
+      "optionA" : "Ayam bekisar",
+      "optionB" : "Biawak Komodo",
+      "optionC" : "Macan Tutul Jawa",
+      "optionD" : "Gajah Sumatra",
+      "correctAnswer" : "Ayam bekisar",
+      "correctScore" : 20,
+      "wrongScore" : 0
+    }
+  ]
+}
